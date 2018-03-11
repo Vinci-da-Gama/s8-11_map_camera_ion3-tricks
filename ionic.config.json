@@ -1,0 +1,8 @@
+{
+  "name": "s8-11_map_camera_ion3-tricks",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
