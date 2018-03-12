@@ -8,9 +8,15 @@ ionic cordova build android
 
 2. cd ./src && mkdir shared && cd shared && mkdir directives providers && cd ../ && mkdir contract && cd contract && mkdir interfaces models modals && cd ../ && mkdir services
 3. cp and paste rxjsOps.ts and errhandler.ts from last repo. in app.module.ts --> import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
-4. cd ../../www/ && mkdir localData
+4. cd ./www/ && mkdir localData && cd ../
 (4.1 for firebase --> sudo npm i node-pre-gyp -g) only once
 5. npm i -> npm i -S firebase @agm/core @ionic-native/camera @ionic-native/geolocation @ionic-native/file @ionic-native/diagnostic
+5.1 in app.module.ts --> after StatusBar --> 
+import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
+--> also add them to Provider.
+
 6. In app.module.ts import HttpClientModule and HTML_Base_Url (good to go now)
     (No) import { HttpModule } from '@angular/http';
     import { HttpClientModule } from '@angular/common/http';

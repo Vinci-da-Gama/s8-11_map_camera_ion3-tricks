@@ -1,1 +1,22 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mapcameratricks">
+	<ion-header>
+		<ion-toolbar>
+			<ion-title>
+				Map-Camera-Tricks
+			</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-list>
+			<button ion-item ion-left (click)="onLoadPage(ntcPage)">
+				<ion-icon name="planet" item-left></ion-icon>
+				Map-Camera-BackBntConfig
+			</button>
+			<button ion-item (click)="onLoadPage(ttcPage)">
+				<ion-icon name="options" item-right></ion-icon>
+				Ionic3_Tticks
+			</button>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+<ion-nav #mapcameratricks [root]="welcomePage"></ion-nav>
