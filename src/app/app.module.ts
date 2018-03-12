@@ -19,6 +19,7 @@ import { PlacePage } from '../pages/place/place';
 import { AddPlacePage } from '../pages/add-place/add-place';
 import { SetPlacePage } from '../pages/set-place/set-place';
 import { BackbtnConfigPage } from '../pages/backbtn-config/backbtn-config';
+import { BackbtnHideshowPage } from '../pages/backbtn-hideshow/backbtn-hideshow';
 import { ScreenOrientationPage } from '../pages/screen-orientation/screen-orientation';
 import { WhatPlatformPage } from '../pages/what-platform/what-platform';
 
@@ -38,6 +39,7 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 		AddPlacePage,
 		SetPlacePage,
 		BackbtnConfigPage,
+		BackbtnHideshowPage,
 		ScreenOrientationPage,
 		WhatPlatformPage,
 		SideMenuToggleBtn
@@ -45,7 +47,21 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 	imports: [
 		BrowserModule,
 		HttpClientModule,
-		IonicModule.forRoot(NativeMapCameraIon3TricksApp)
+		IonicModule.forRoot(
+			NativeMapCameraIon3TricksApp,
+			{
+				backButtonText: 'Go Back',
+				modalEnter: 'modal-slide-in',
+				modalLeave: 'modal-slide-out',
+				tabsPlacement: 'bottom',
+				pageTransition: 'ios-transition',
+				platforms: {
+					ios: {
+						tabsPlacement: 'top',
+					}
+				}
+			}
+		)
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
@@ -59,6 +75,7 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 		AddPlacePage,
 		SetPlacePage,
 		BackbtnConfigPage,
+		BackbtnHideshowPage,
 		ScreenOrientationPage,
 		WhatPlatformPage
 	],

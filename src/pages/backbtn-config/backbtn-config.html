@@ -6,5 +6,46 @@
 </ion-header>
 
 <ion-content padding>
-
+	<div>
+		<ion-segment [(ngModel)]="threeWaysResetBackBtn">
+			<ion-segment-button value="way1">
+				<ion-icon name="key"></ion-icon>
+			</ion-segment-button>
+			<ion-segment-button value="way2">
+				<ion-icon name="lock"></ion-icon>
+			</ion-segment-button>
+			<ion-segment-button value="way3">
+				<ion-icon name="map"></ion-icon>
+			</ion-segment-button>
+		</ion-segment>
+	</div>
+	<div [ngSwitch]="threeWaysResetBackBtn">
+		<ion-list *ngSwitchCase="'way1'">
+			<ion-note item-right>way1</ion-note>
+			<p>
+				1. In file --> Navbar.setBackButtonText(Val) |||| Navbar.hideBackButton = true |||| Navbar.backButtonClick()
+			</p>
+		</ion-list>
+		<ion-list *ngSwitchCase="'way2'">
+			<ion-note item-right>way2</ion-note>
+			<p>
+				2. In file --> ViewController.setBackButtonText(val) |||| ViewController.showBackButton(Set) |||| ViewController.enableBack()
+			</p>
+		</ion-list>
+		<ion-list *ngSwitchCase="'way3'">
+			<ion-note item-right>way3</ion-note>
+			<p>
+				in app.module.ts --> IonicModule.forRoot config (this is app global config) --> see here
+				<a href="https://ionicframework.com/docs/api/config/Config/" target="_blank" color="secondary">
+					app_config
+				</a>
+			</p>
+		</ion-list>
+	</div>
+	<p text-center>
+		Go next page hide and show to see different ways display Back Button.
+	</p>
+	<button ion-button outline block color="secondary" [navPush]="bbhsPage">
+		Go Next
+	</button>
 </ion-content>
