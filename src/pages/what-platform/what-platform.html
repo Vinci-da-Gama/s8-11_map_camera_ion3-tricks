@@ -6,5 +6,30 @@
 </ion-header>
 
 <ion-content padding>
-
+	<p color="secondary" *ngIf="pltf.is('ios')">
+		the platform is
+		<strong class="fz2em">ios</strong>.
+	</p>
+	<p color="primary" *ngIf="pltf.is('iphone')">
+		the platform is
+		<strong class="fz2em">iphone</strong>.
+	</p>
+	<p color="dark" *ngIf="pltf.is('android')">
+		the platform is
+		<strong class="fz2em">android</strong>.
+	</p>
+	<p color="dark" *ngIf="pltf.is('windows')">
+		the platform is
+		<strong class="fz2em">windows</strong>.
+	</p>
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<ion-note text-right>
+					Pls check platform here.
+				</ion-note>
+				<a href="https://ionicframework.com/docs/api/platform/Platform/" target="_blank" ion-item color="secondary">see platform</a>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>

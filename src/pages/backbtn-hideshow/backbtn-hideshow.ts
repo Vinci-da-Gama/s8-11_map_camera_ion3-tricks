@@ -22,7 +22,7 @@ export class BackbtnHideshowPage {
 		// way2 -- ViewController
 		// this.viewCtrl.setBackButtonText('Back-Config');
 		// this.viewCtrl.enableBack();
-		this.viewCtrl.showBackButton(false);
+		// this.viewCtrl.showBackButton(false);
 	}
 
 }
