@@ -6,11 +6,13 @@ ensure you hava gradle --> brew install gradle || scoop install gradle (gradle -
 ionic cordova build ios
 ionic cordova build android
 
-2. cd ./src && mkdir shared && cd shared && mkdir directives providers && cd ../ && mkdir contract && cd contract && mkdir interfaces models modals && cd ../ && mkdir services
+2. cd ./src && mkdir shared && cd shared && mkdir modals directives providers && cd ../ && mkdir contract && cd contract && mkdir interfaces models && cd ../ && mkdir services
 3. cp and paste rxjsOps.ts and errhandler.ts from last repo. in app.module.ts --> import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 4. cd ./www/ && mkdir localData && cd ../
 (4.1 for firebase --> sudo npm i node-pre-gyp -g) only once
-5. npm i -> npm i -S firebase @agm/core @ionic-native/camera @ionic-native/geolocation @ionic-native/file @ionic-native/diagnostic
+
+5. npm i -> npm i -S firebase @agm/core @ionic-native/core @ionic-native/camera @ionic-native/geolocation @ionic-native/file @ionic-native/diagnostic
+
 5.1 in app.module.ts --> after StatusBar --> 
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
@@ -31,7 +33,13 @@ import { File } from '@ionic-native/file';
     // import { catchError, retry } from 'rxjs/operators';
     import '../../shared/rxjsOps';
 
-7. cordova plugin would be later...
+7. cordova plugin 
+ionic cordova plugin add cordova-plugin-geolocation --variable GEOLOCATION_USAGE_DESCRIPTION="To locate you"
+ionic cordova plugin add cordova-plugin-camera
+ionic cordova plugin add cordova-plugin-file
+ionic cordova plugin add cordova.plugins.diagnostic
+
+
 8. update tslint.json  and tsconfig.json
 tsconfig.json
 

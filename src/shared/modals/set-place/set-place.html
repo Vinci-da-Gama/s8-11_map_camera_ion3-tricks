@@ -1,0 +1,40 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>set-place</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<agm-map [latitude]="passinLocation.lat" [longitude]="passinLocation.lng" [zoom]="zoomVal" [disableDefaultUI]="isDisableDefUi"
+	    [zoomControl]="isZoomControl" (mapClick)="onSetMarker($event)">
+		<!-- *ngIf="newMarker" => only when click then show new marker -->
+		<agm-marker [latitude]="newMarker.lat" [longitude]="newMarker.lng" *ngIf="newMarker"></agm-marker>
+
+		<agm-marker *ngFor="let m of multipleMarkers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat"
+		    [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+			<agm-info-window>
+				<strong>InfoWindow content</strong>
+			</agm-info-window>
+
+		</agm-marker>
+
+		<agm-circle [latitude]="passinLocation.lat + 0.1" [longitude]="passinLocation.lng" [radius]="5000" [fillColor]="'MEDIUMBLUE'"
+		    [circleDraggable]="true" [editable]="true">
+		</agm-circle>
+	</agm-map>
+	<ion-row>
+		<ion-col col-6>
+			<button ion-button full color="secondary" (click)="onConfirm()" [disabled]="!newMarker">
+				<ion-icon name="bulb" item-right></ion-icon>
+				Confirm
+			</button>
+		</ion-col>
+		<ion-col col-6>
+			<button ion-button full color="danger" (click)="onAbort()">
+				<ion-icon name="cash" item-right></ion-icon>
+				Abort
+			</button>
+		</ion-col>
+	</ion-row>
+</ion-content>

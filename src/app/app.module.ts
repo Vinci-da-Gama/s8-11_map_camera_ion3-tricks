@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
+import { AgmCoreModule } from '@agm/core';
 
 import { NativeMapCameraIon3TricksApp } from './app.component';
 import { WelcomeIntroPage } from '../pages/welcome-intro/welcome-intro';
@@ -17,13 +18,12 @@ import { TricksTabsContainerPage } from '../pages/tricks-tabs-container/tricks-t
 import { TricksTabsPage } from '../pages/tricks-tabs/tricks-tabs';
 import { PlacePage } from '../pages/place/place';
 import { AddPlacePage } from '../pages/add-place/add-place';
-import { SetPlacePage } from '../pages/set-place/set-place';
 import { BackbtnConfigPage } from '../pages/backbtn-config/backbtn-config';
 import { BackbtnHideshowPage } from '../pages/backbtn-hideshow/backbtn-hideshow';
 import { ScreenOrientationPage } from '../pages/screen-orientation/screen-orientation';
 import { WhatPlatformPage } from '../pages/what-platform/what-platform';
 
-
+import { SetPlaceModal } from '../shared/modals/set-place/set-place';
 import { SideMenuToggleBtn } from '../shared/directives/side-menu-toggle/side-menu-toggle';
 import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 
@@ -37,11 +37,11 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 		TricksTabsPage,
 		PlacePage,
 		AddPlacePage,
-		SetPlacePage,
 		BackbtnConfigPage,
 		BackbtnHideshowPage,
 		ScreenOrientationPage,
 		WhatPlatformPage,
+		SetPlaceModal,
 		SideMenuToggleBtn
 	],
 	imports: [
@@ -61,6 +61,11 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 					}
 				}
 			}
+		),
+		AgmCoreModule.forRoot(
+			{
+				apiKey: 'AIzaSyB5RZUB9tcS1q8ZdrMX_DMZ5SCVc5BrWgo'
+			}
 		)
 	],
 	bootstrap: [IonicApp],
@@ -73,11 +78,11 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 		TricksTabsPage,
 		PlacePage,
 		AddPlacePage,
-		SetPlacePage,
 		BackbtnConfigPage,
 		BackbtnHideshowPage,
 		ScreenOrientationPage,
-		WhatPlatformPage
+		WhatPlatformPage,
+		SetPlaceModal
 	],
 	providers: [
 		StatusBar,

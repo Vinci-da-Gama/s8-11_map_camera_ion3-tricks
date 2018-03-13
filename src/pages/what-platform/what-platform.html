@@ -6,22 +6,24 @@
 </ion-header>
 
 <ion-content padding>
-	<p color="secondary" *ngIf="pltf.is('ios')">
-		the platform is
-		<strong class="fz2em">ios</strong>.
-	</p>
-	<p color="primary" *ngIf="pltf.is('iphone')">
-		the platform is
-		<strong class="fz2em">iphone</strong>.
-	</p>
-	<p color="dark" *ngIf="pltf.is('android')">
-		the platform is
-		<strong class="fz2em">android</strong>.
-	</p>
-	<p color="dark" *ngIf="pltf.is('windows')">
-		the platform is
-		<strong class="fz2em">windows</strong>.
-	</p>
+	<div>
+		<p color="secondary" *ngIf="pltf.is('ios')">
+			the platform is
+			<strong class="fz2em">ios</strong>.
+		</p>
+		<p color="primary" *ngIf="pltf.is('iphone')">
+			the platform is
+			<strong class="fz2em">iphone</strong>.
+		</p>
+		<p color="dark" *ngIf="pltf.is('android')">
+			the platform is
+			<strong class="fz2em">android</strong>.
+		</p>
+		<p color="dark" *ngIf="pltf.is('windows')">
+			the platform is
+			<strong class="fz2em">windows</strong>.
+		</p>
+	</div>
 	<ion-grid>
 		<ion-row>
 			<ion-col>
@@ -32,4 +34,14 @@
 			</ion-col>
 		</ion-row>
 	</ion-grid>
+	<ion-list>
+		<ion-item *ngFor="let img of imgArr; let i = index;">
+			<ion-thumbnail item-left>
+				<img src="{{img.imgUrl}}" alt="item-img-{{i}}" />
+			</ion-thumbnail>
+			<h2>{{img.title}}</h2>
+			<p>{{img.desc}}</p>
+			<!-- <button ion-button clear item-right (click)=""></button> -->
+		</ion-item>
+	</ion-list>
 </ion-content>
