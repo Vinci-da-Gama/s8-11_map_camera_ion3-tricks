@@ -47,7 +47,7 @@ export class SetPlaceModal {
 		private viewCtrl: ViewController
 	) {
 		this.passinLocation = this.navParams.get('location');
-		console.log('28 -- location: ', this.navParams.get('location'));
+		console.log('50 -- location: ', this.navParams.get('location'));
 		if (this.navParams.get('isSet')) {
 			this.newMarker = this.passinLocation;
 		}

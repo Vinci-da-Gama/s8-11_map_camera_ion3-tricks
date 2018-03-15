@@ -12,5 +12,24 @@
 
 
 <ion-content padding>
-
+	<ion-card *ngFor="let p of places; let i = index" (click)="onOpenPage(p, i)">
+		<ion-card-header>
+			<img [src]="p.imgUrl" alt="p.title-{{i}}" *ngIf="p.imgUrl && p.imgUrl !== 'fake-img-url'" />
+			<ion-note *ngIf="!p.imgUrl || p.imgUrl === '' || p.imgUrl === 'fake-img-url'">
+				This is just fack img url.
+			</ion-note>
+		</ion-card-header>
+		<ion-card-content>
+			<ion-card-title>
+				Title: {{p.title}}
+			</ion-card-title>
+			<p>
+				{{p.description}}
+			</p>
+			<agm-map [latitude]="p.location.lat" [longitude]="p.location.lng" [zoom]="12">
+				<agm-marker [latitude]="p.location.lat" [longitude]="p.location.lng">
+				</agm-marker>
+			</agm-map>
+		</ion-card-content>
+	</ion-card>
 </ion-content>

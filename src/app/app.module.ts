@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_BASE_HREF } from '@angular/common';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicStorageModule } from '@ionic/storage';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -24,8 +25,10 @@ import { ScreenOrientationPage } from '../pages/screen-orientation/screen-orient
 import { WhatPlatformPage } from '../pages/what-platform/what-platform';
 
 import { SetPlaceModal } from '../shared/modals/set-place/set-place';
+import { PlaceDisplayModal } from '../shared/modals/place-display/place-display';
 import { SideMenuToggleBtn } from '../shared/directives/side-menu-toggle/side-menu-toggle';
 import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
+import { PlaceService } from '../services/place-service';
 
 @NgModule({
 	declarations: [
@@ -42,6 +45,7 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 		ScreenOrientationPage,
 		WhatPlatformPage,
 		SetPlaceModal,
+		PlaceDisplayModal,
 		SideMenuToggleBtn
 	],
 	imports: [
@@ -66,7 +70,11 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 			{
 				apiKey: 'AIzaSyB5RZUB9tcS1q8ZdrMX_DMZ5SCVc5BrWgo'
 			}
-		)
+		),
+		IonicStorageModule.forRoot({
+			name: '_ionicStorage',
+			driverOrder: ['indexeddb', 'sqlite', 'websql']
+		})
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
@@ -82,7 +90,8 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 		BackbtnHideshowPage,
 		ScreenOrientationPage,
 		WhatPlatformPage,
-		SetPlaceModal
+		SetPlaceModal,
+		PlaceDisplayModal
 	],
 	providers: [
 		StatusBar,
@@ -92,7 +101,8 @@ import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 		File,
 		{ provide: APP_BASE_HREF, useValue: '/' },
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
-		ErrorhandlerProvider
+		ErrorhandlerProvider,
+		PlaceService
 	]
 })
 export class AppModule { }

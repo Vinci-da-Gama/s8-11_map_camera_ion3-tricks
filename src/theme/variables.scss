@@ -22,6 +22,12 @@ agm-map {
   height: 300px;
 }
 
+page-place {
+  agm-map {
+    height: 200px;
+  }
+}
+
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override

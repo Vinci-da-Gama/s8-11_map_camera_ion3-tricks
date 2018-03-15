@@ -1,0 +1,48 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Title: {{sigPlace.title}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<ion-card *ngIf="sigPlace.imgUrl.includes('/')">
+					<img [src]="sigPlace.imgUrl" alt="sigPlace.title" />
+				</ion-card>
+				<ion-note *ngIf="!sigPlace.imgUrl.includes('/')">
+					This is fake image url for testing purpose...
+				</ion-note>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<p>
+					{{sigPlace.description}}
+				</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<agm-map [latitude]="sigPlace.location.lat" [longitude]="sigPlace.location.lng" [zoom]="14">
+					<agm-marker [latitude]="sigPlace.location.lat" [longitude]="sigPlace.location.lng"></agm-marker>
+				</agm-map>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-6>
+				<button ion-button full clear icon-right type="button" color="secondary" (click)="onLeaveRecordPlace()">
+					Leave
+					<ion-icon name="map"></ion-icon>
+				</button>
+			</ion-col>
+			<ion-col col-6>
+				<button ion-button full icon-right type="button" color="danger" (click)="onDelete()">
+					Delete Place
+					<ion-icon name="clipboard"></ion-icon>
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

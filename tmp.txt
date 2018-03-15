@@ -11,7 +11,7 @@ ionic cordova build android
 4. cd ./www/ && mkdir localData && cd ../
 (4.1 for firebase --> sudo npm i node-pre-gyp -g) only once
 
-5. npm i -> npm i -S firebase @agm/core @ionic-native/core @ionic-native/camera @ionic-native/geolocation @ionic-native/file @ionic-native/diagnostic
+5. npm i -> npm i -S firebase @agm/core @ionic/storage @ionic-native/core @ionic-native/camera @ionic-native/geolocation @ionic-native/file @ionic-native/diagnostic
 
 5.1 in app.module.ts --> after StatusBar --> 
 import { Geolocation } from '@ionic-native/geolocation';
@@ -38,6 +38,7 @@ ionic cordova plugin add cordova-plugin-geolocation --variable GEOLOCATION_USAGE
 ionic cordova plugin add cordova-plugin-camera
 ionic cordova plugin add cordova-plugin-file
 ionic cordova plugin add cordova.plugins.diagnostic
+ionic cordova plugin add cordova-sqlite-storage
 
 
 8. update tslint.json  and tsconfig.json
@@ -70,3 +71,10 @@ tslint.json
 
 git config user.name "Vinci-da-Game"
 git config user.email "11582145@student.uts.edu.au"
+
+for Testing
+ionic cordova run android -lc
+ionic cordova run ios -lc
+
+ionic cordova emulate android
+ionic cordova emulate ios

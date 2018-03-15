@@ -55,11 +55,15 @@
 			</ion-row>
 			<ion-row>
 				<ion-col>
-					<img [src]="" alt="photoshop-u-take" />
+					<ion-note *ngIf="!imgUrl" class="fz2em">
+						Camera has to test in real device, so I cannot do it, I donot have licience.
+					</ion-note>
+					<img [src]="imgUrl" alt="photoshop-u-take" *ngIf="imgUrl" />
 				</ion-col>
 			</ion-row>
 			<ion-row>
 				<ion-col>
+					<!-- disable should has || imgUrl === '', but i cannot test it, so forget about it. -->
 					<button ion-button block outline icon-right type="submit" color="secondary" [disabled]="!addPlaceForm.valid || !locationIsSet">
 						Add This Place
 						<ion-icon name="map"></ion-icon>
