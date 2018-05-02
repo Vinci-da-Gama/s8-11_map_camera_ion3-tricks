@@ -1,0 +1,28 @@
+<ion-header>
+	<ion-navbar>
+		<side-menu-toggle></side-menu-toggle>
+		<ion-title>
+			Infinit-reorder-virtual
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-list>
+		<ion-item-group reorder="true" (ionItemReorder)="reorderImage($event)">
+			<ion-item *ngFor="let img of imgCompuLangs; let i = index;">
+				<ion-thumbnail item-left>
+					<img src="{{img.imgUrl}}" alt="item-img-{{i}}" />
+				</ion-thumbnail>
+				<h2>{{img.title}}</h2>
+				<p>{{img.desc}}</p>
+			</ion-item>
+		</ion-item-group>
+	</ion-list>
+
+	<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+
+</ion-content>

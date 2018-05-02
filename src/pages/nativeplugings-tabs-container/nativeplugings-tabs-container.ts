@@ -12,7 +12,8 @@ export class NativeTabsContainer {
 	private npTabs: any = NativeplugingsTabsPage;
 
 	constructor(
-		private navCtrl: NavController, private navParams: NavParams
+		private navCtrl: NavController,
+		private navParams: NavParams
 	) { }
 
 	ionViewDidLoad() {

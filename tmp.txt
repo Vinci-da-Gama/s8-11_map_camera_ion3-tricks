@@ -6,6 +6,7 @@ ensure you hava gradle --> brew install gradle || scoop install gradle (gradle -
 ionic cordova build ios
 ionic cordova build android
 
+
 2. cd ./src && mkdir shared && cd shared && mkdir modals directives providers && cd ../ && mkdir contract && cd contract && mkdir interfaces models && cd ../ && mkdir services
 3. cp and paste rxjsOps.ts and errhandler.ts from last repo. in app.module.ts --> import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 4. cd ./www/ && mkdir localData && cd ../

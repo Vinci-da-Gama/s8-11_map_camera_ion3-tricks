@@ -23,6 +23,8 @@ import { BackbtnConfigPage } from '../pages/backbtn-config/backbtn-config';
 import { BackbtnHideshowPage } from '../pages/backbtn-hideshow/backbtn-hideshow';
 import { ScreenOrientationPage } from '../pages/screen-orientation/screen-orientation';
 import { WhatPlatformPage } from '../pages/what-platform/what-platform';
+import { ScorllContainerPage } from '../pages/scroll-compo/scorll-container/scorll-container';
+import { ScrollListPage } from '../pages/scroll-compo/scroll-list/scroll-list';
 
 import { SetPlaceModal } from '../shared/modals/set-place/set-place';
 import { PlaceDisplayModal } from '../shared/modals/place-display/place-display';
@@ -44,6 +46,8 @@ import { PlaceService } from '../services/place-service';
 		BackbtnHideshowPage,
 		ScreenOrientationPage,
 		WhatPlatformPage,
+		ScorllContainerPage,
+		ScrollListPage,
 		SetPlaceModal,
 		PlaceDisplayModal,
 		SideMenuToggleBtn
@@ -90,6 +94,8 @@ import { PlaceService } from '../services/place-service';
 		BackbtnHideshowPage,
 		ScreenOrientationPage,
 		WhatPlatformPage,
+		ScorllContainerPage,
+		ScrollListPage,
 		SetPlaceModal,
 		PlaceDisplayModal
 	],

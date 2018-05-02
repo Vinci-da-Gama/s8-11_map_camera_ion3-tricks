@@ -7,6 +7,7 @@ import fb from 'firebase';
 import { WelcomeIntroPage } from '../pages/welcome-intro/welcome-intro';
 import { NativeTabsContainer } from '../pages/nativeplugings-tabs-container/nativeplugings-tabs-container';
 import { TricksTabsContainerPage } from '../pages/tricks-tabs-container/tricks-tabs-container';
+import { ScorllContainerPage } from '../pages/scroll-compo/scorll-container/scorll-container';
 
 @Component({
 	templateUrl: 'app.html'
@@ -17,6 +18,7 @@ export class NativeMapCameraIon3TricksApp {
 	private welcomePage: any = WelcomeIntroPage;
 	private ntcPage: any = NativeTabsContainer;
 	private ttcPage: any = TricksTabsContainerPage;
+	private scrollPage: any = ScorllContainerPage;
 
 	constructor(
 		private platform: Platform,
