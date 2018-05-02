@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { ScrollListPage } from '../scroll-list/scroll-list';
+import { ScrollTabsPage } from '../scroll-tabs/scroll-tabs';
 
 @Component({
 	selector: 'page-scorll-container',
@@ -9,7 +9,7 @@ import { ScrollListPage } from '../scroll-list/scroll-list';
 })
 export class ScorllContainerPage {
 
-	private slpage: any = ScrollListPage;
+	private sTabsPage: any = ScrollTabsPage;
 
 	constructor(
 		private navCtrl: NavController,

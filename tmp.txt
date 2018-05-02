@@ -79,3 +79,5 @@ ionic cordova run ios -lc
 
 ionic cordova emulate android
 ionic cordova emulate ios
+
+yarn add @ngrx/core @ngrx/effects @ngrx/router-store @ngrx/store @ngrx/store-devtools

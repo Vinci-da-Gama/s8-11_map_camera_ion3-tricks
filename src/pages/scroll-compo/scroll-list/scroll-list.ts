@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { NavController, NavParams } from 'ionic-angular';
 import { reorderArray } from 'ionic-angular';
-// import { List } from 'ionic-angular';
 
 import { ImgObjInterface } from '../../../contract/interfaces/imgobj-interface';
 
@@ -109,7 +108,7 @@ export class ScrollListPage implements OnInit {
 	}
 
 	doInfinite(infiniteScroll) {
-		console.log('116 -- Begin async operation: ', infiniteScroll);
+		console.log('111 -- Begin async operation: ', infiniteScroll);
 
 		setTimeout(() => {
 			for (let i = 0; i < 20; i++) {

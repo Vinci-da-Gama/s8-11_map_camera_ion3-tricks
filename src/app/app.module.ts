@@ -10,6 +10,9 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { AgmCoreModule } from '@agm/core';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { NativeMapCameraIon3TricksApp } from './app.component';
 import { WelcomeIntroPage } from '../pages/welcome-intro/welcome-intro';
@@ -24,13 +27,17 @@ import { BackbtnHideshowPage } from '../pages/backbtn-hideshow/backbtn-hideshow'
 import { ScreenOrientationPage } from '../pages/screen-orientation/screen-orientation';
 import { WhatPlatformPage } from '../pages/what-platform/what-platform';
 import { ScorllContainerPage } from '../pages/scroll-compo/scorll-container/scorll-container';
+import { ScrollTabsPage } from '../pages/scroll-compo/scroll-tabs/scroll-tabs';
 import { ScrollListPage } from '../pages/scroll-compo/scroll-list/scroll-list';
+import { ScrollVirtualListPage } from '../pages/scroll-compo/scroll-virtual-list/scroll-vlist';
 
 import { SetPlaceModal } from '../shared/modals/set-place/set-place';
 import { PlaceDisplayModal } from '../shared/modals/place-display/place-display';
 import { SideMenuToggleBtn } from '../shared/directives/side-menu-toggle/side-menu-toggle';
 import { ErrorhandlerProvider } from '../shared/providers/errorhandler';
 import { PlaceService } from '../services/place-service';
+
+import { AppReducers } from '../store/app-store/app.reducers';
 
 @NgModule({
 	declarations: [
@@ -47,7 +54,9 @@ import { PlaceService } from '../services/place-service';
 		ScreenOrientationPage,
 		WhatPlatformPage,
 		ScorllContainerPage,
+		ScrollTabsPage,
 		ScrollListPage,
+		ScrollVirtualListPage,
 		SetPlaceModal,
 		PlaceDisplayModal,
 		SideMenuToggleBtn
@@ -78,7 +87,9 @@ import { PlaceService } from '../services/place-service';
 		IonicStorageModule.forRoot({
 			name: '_ionicStorage',
 			driverOrder: ['indexeddb', 'sqlite', 'websql']
-		})
+		}),
+		StoreModule.forRoot(AppReducers)/* ,
+		EffectsModule.forRoot([]) */
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
@@ -95,7 +106,9 @@ import { PlaceService } from '../services/place-service';
 		ScreenOrientationPage,
 		WhatPlatformPage,
 		ScorllContainerPage,
+		ScrollTabsPage,
 		ScrollListPage,
+		ScrollVirtualListPage,
 		SetPlaceModal,
 		PlaceDisplayModal
 	],

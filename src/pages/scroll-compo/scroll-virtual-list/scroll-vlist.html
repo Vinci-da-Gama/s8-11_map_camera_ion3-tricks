@@ -1,0 +1,28 @@
+<ion-header>
+	<ion-navbar>
+		<side-menu-toggle></side-menu-toggle>
+		<ion-title>
+			virtual-scroll
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-list [virtualScroll]="(imgCompuLangs | async).imgs" [headerFn]="virtualHeaderFunction">
+
+		<ion-item-divider *virtualHeader="let header">
+			Header: {{ header }}
+		</ion-item-divider>
+
+		<ion-item *virtualItem="let img">
+			<ion-thumbnail item-left>
+				<img src="{{img.imgUrl}}" alt="item-img-{{i}}" />
+			</ion-thumbnail>
+			<h2>{{img.title}}</h2>
+			<p>{{img.desc}}</p>
+		</ion-item>
+
+	</ion-list>
+
+</ion-content>
